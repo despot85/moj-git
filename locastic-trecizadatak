@@ -1,0 +1,51 @@
+<?php
+  
+  //funkciju koja kao parameter prima neki niz, a kao rezultat vraća element koji se najviše  puta ponavlja unutar tog niza  
+
+  function najvecielement($niz) 
+{
+	$maks=$niz[0];
+	for ($i=0;$i<(izbroji($niz)-1);$i++)
+	{
+		if ($maks<$niz[$i+1])
+		$maks=$niz[$i+1];
+	}
+	return $maks;
+}
+
+function izbroji($niz) 
+{
+	$brojac=0;
+	foreach ($niz as $element)
+	$brojac++;
+	return $brojac;
+}
+
+function analizirajniz($niz) 
+{
+	$duljinaniza = izbroji($niz);
+		
+	for ($i=0; $i<$duljinaniza; $i++)
+	$nizbrojac[]=0;
+	
+	for ($i=0; $i<$duljinaniza; $i++)
+	{
+		for ($j=0; $j<$duljinaniza; $j++)
+		{
+			if ($niz[$i]==$niz[$j])
+			$nizbrojac[$i]++;
+		}
+	}
+
+	$najvecavrijednost = najvecielement($nizbrojac); 
+
+	$kljuc = array_search($najvecavrijednost, $nizbrojac);
+	
+	return $niz[$kljuc];
+}
+echo analizirajniz(array("m","a","m","o","t","r","a","m","s"));
+
+
+
+
+?>
