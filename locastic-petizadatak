@@ -1,0 +1,36 @@
+<?php
+
+// funkciju koja prima dva niza znakova (stringa) i vraća najduži zajednički niz (substring)
+
+function razdvojiniz($niz) 
+{
+	for ($i=0; $i<count($niz); $i++)
+		{
+			if ($niz[$i]%2==0)
+			$par[] = $niz[$i];
+			else
+			$nepar[] = $niz[$i];
+		}
+
+	$niz = array
+	(
+	"par" => $par,
+	"nepar" => $nepar
+	);
+
+
+	echo "Parni brojevi: ";
+	for ($i=0;$i<count($par);$i++)
+	echo $niz["par"][$i] . " ";
+	echo "<br>";
+	echo "Neparni brojevi: ";
+	for ($i=0;$i<count($nepar);$i++)
+	echo $niz["nepar"][$i] . " ";
+	echo "<br>";
+	
+}
+
+razdvojiniz(array(1,2,3,4,5,6,7,8,9));
+
+
+?>
