@@ -1,0 +1,20 @@
+<?php
+
+// funkciju koja koristeći rekurziju prolazi kroz foldere te ispisuje datoteke unutar  pojedinog foldera.  
+
+function vrtikrozfoldere($direktorij)
+{
+$dir = new RecursiveDirectoryIterator($direktorij);
+	foreach (new RecursiveIteratorIterator($dir) as $filename => $file) 
+	{
+    echo $filename;
+	echo "<br>";
+	}
+}
+
+
+$a=vrtikrozfoldere('your folder');
+
+print_r($a);
+
+?>
