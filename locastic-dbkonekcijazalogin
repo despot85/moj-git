@@ -1,0 +1,6 @@
+ <?php
+//connect to mysql database for login
+
+$con = mysqli_connect("server", "user", "password", "databasename") or die("Error " . mysqli_error($con));
+
+?>
