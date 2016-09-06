@@ -1,0 +1,29 @@
+<?php
+
+//funkciju koja kao parameter prima neki niz cijelih brojeva, a kao rezultat vraća  najmanji broj unutar tog niza
+
+function izbroji($niz) 
+{
+	$brojac=0;
+	foreach ($niz as $element)
+	$brojac++;
+	return $brojac;
+}
+
+function najmanjielement($niz) 
+{
+	$min=$niz[0];
+	for ($i=0;$i<(izbroji($niz)-1);$i++)
+	{
+		if ($min>$niz[$i+1])
+		$min=$niz[$i+1];
+	}
+	return $min;
+}
+
+
+echo najmanjielement(array(10, 4, 5, 7, 23, 67, 4, 99, 1, 23, 45, 55));
+
+
+
+?>
