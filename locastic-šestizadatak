@@ -1,0 +1,67 @@
+<?php
+
+
+//funkciju koja kao parametre prima niz cijelih brojeva i broj grupa, podijeli taj niz u  navedeni broj grupa na način da je suma svih članova unutar pojedine grupe što je moguće  bliža
+
+
+function razdvojiniz($niz, $brojgrupa) 
+{	
+	$duljinaniza = (count($niz));
+	while ($duljinaniza%$brojgrupa!=0)
+	{
+	$niz[]=0;
+	$duljinaniza++;
+	}
+	sort($niz);
+	$niz = array_reverse($niz);
+	
+	
+	
+	$brojac=0;
+	$matrix = array(); 
+
+	for($i=0; $i<$duljinaniza/$brojgrupa; $i++)
+	{
+		$matrix[$i] = array(); 
+		if ($i%2==0)
+		{
+		for($j=0; $j<$brojgrupa; $j++)
+			{
+			$matrix[$i][$j] = $niz[$brojac];
+			$brojac++;
+			}
+		}
+
+		else
+		{
+		for($j=($brojgrupa-1); $j>=0; $j--)
+			{
+			$matrix[$i][$j] = $niz[$brojac];
+			$brojac++;
+			}
+		}
+	}
+	
+	
+	$sum=0;
+	for($i=0; $i<$brojgrupa; $i++)
+	{
+		echo $i+1 . "-grupa ";
+		for($j=0; $j<$duljinaniza/$brojgrupa; $j++)
+		{
+			echo $matrix[$j][$i] . " ";
+			$sum = $matrix[$j][$i] + $sum;
+		}
+
+		echo  "=" . $sum;
+		echo "<br>";
+		$sum=0;
+	}
+	
+}
+
+
+echo razdvojiniz(array(2, 1, 4, 7, 1, 2, 6, 8), 3);
+
+
+?>
