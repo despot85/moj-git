@@ -1,0 +1,52 @@
+<?php
+
+ //funkciju koja kao parametar prima string, te kao rezultat vraća true ako je zadani string  palindrom, u suprotnom vraća false 
+
+
+function izbroji($tekst) 
+{
+	for ($i=0;$i<100;$i++)
+	{
+		if (isset ($tekst[$i])==false)
+		return $i;
+	}
+}
+function stringtomalaslova($tekst)
+{
+	for ($i=0;$i<(izbroji($tekst));$i++)
+	{
+	$asciiSlovo = ord($tekst{$i});
+	if (($asciiSlovo <= 90) and ($asciiSlovo >= 65) )
+		{
+		$tekst{$i} = chr($asciiSlovo+32);
+		}
+	}
+	return $tekst;
+}
+
+
+function ispitaj($tekst) 
+{
+	$tekst = stringtomalaslova($tekst);
+	$tekst = str_replace(' ', '', $tekst);
+	$tekstNiz = str_split($tekst);
+	$pola = floor(strlen($tekst) / 2);	
+		for ($i = 0; $i < $pola; $i++) 
+		{
+			if ( $tekstNiz[$i] != $tekstNiz[((strlen($tekst))-1) - $i])
+			{
+			$tekst = "Ovo nije palindrom";
+			return $tekst;
+			}
+		}
+		$tekst= "Ovo jeste palindrom";
+		return $tekst;
+}
+
+
+
+echo ispitaj(" da li je ovo palindrom ");
+
+
+
+?>
