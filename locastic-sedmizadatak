@@ -1,0 +1,31 @@
+<?php
+
+// funkciju koja ispisuje brojeve od 1 do 100, ali na način da za brojeve koji su djeljivi sa  tri ispiše “LOCA”, za brojeve koji su djeljivi sa 5 ispiše “STIC”, a za brojeve koji su djeljivi i sa 3  i sa 5 ispišite “LOCASTIC”  
+
+
+ function ispisibrojeve() 
+{
+	for ($i=1; $i<=100; $i++)
+	{
+		if (($i%3==0) and ($i%5==0))
+		echo "LOCASTIC";
+		
+		elseif ($i%5==0)
+		echo "STIC";
+		
+		elseif ($i%3==0)
+		echo "LOCA";
+		
+		else
+		echo $i;
+		echo "<br>";
+
+	}
+}
+
+
+ispisibrojeve(); 
+
+
+
+?>
