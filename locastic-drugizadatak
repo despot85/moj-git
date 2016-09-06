@@ -1,0 +1,38 @@
+<?php
+
+// funkciju koja prima dva integer parametra n i m, te kao rezultat vraća vrijednost n^m
+
+function apsolutnavrijednostod($x)
+{
+	if ($x>0)
+	return $x;
+	else
+	return -($x);
+}
+
+function kvadriraj($baza, $exp) 
+{
+	if ($exp==0)
+	return 1;
+	for($i=0;$i<apsolutnavrijednostod($exp);$i++)
+	{
+		$niz[$i]=$baza;
+	}
+	for($i=0;$i<(apsolutnavrijednostod($exp)-1);$i++)
+	{
+	$niz[0] = $niz[0] * $niz[$i];
+	}
+	
+	if ($exp>0)
+	return $niz[0];
+	else
+	return 1/$niz[0];
+	
+}
+
+
+echo kvadriraj(3,4);
+
+
+
+?>
