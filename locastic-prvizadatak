@@ -45,7 +45,7 @@ function ispitaj($tekst)
 
 
 
-echo ispitaj(" da li je ovo palindrom ");
+echo ispitaj(" AnA vOli MiLovAnA ");
 
 
 
